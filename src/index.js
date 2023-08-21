@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.apiKey = void 0;
+var User_1 = require("./User");
+var Company_1 = require("./Company");
+var CustomMap_1 = require("./CustomMap");
+var dotenv_1 = require("dotenv");
+dotenv_1.default.config();
+exports.apiKey = process.env.API_KEY;
+console.log(exports.apiKey);
+var user = new User_1.User();
+var company = new Company_1.Company();
+var customMap = new CustomMap_1.CustomMap('map');
+customMap.addMarker(user);
+customMap.addMarker(company);
